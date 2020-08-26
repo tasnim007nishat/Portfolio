@@ -1,0 +1,61 @@
+body {
+    background-color: #E5E7E9;
+    color: #17202A;
+    font: 16px "Lucida Console", Courier, monospace;
+    line-height: 1.5em;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#header {
+    background-color: #34495E;
+    color: #fff;
+}
+
+/*
+    #links {
+    background-color: #e0e0eb;
+}
+*/
+
+
+#links a {
+    color: #17202A;
+    padding-right: 17px;
+}
+
+    
+#links li {
+    display: inline;
+}
+
+#view {
+    background-position: center;
+    text-align: center;
+}
+
+#about {
+    float: left;
+    width: 60%;
+}
+
+#skills {
+    float: left;
+    width: 60%;
+}
+
+#projects {
+    float: left;
+    width: 60%;
+}
+
+#footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}
