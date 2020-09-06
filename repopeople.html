@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Lab 4</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="background-image: url(Background3.jpg);background-repeat: no-repeat; background-attachment: fixed;background-size: 100% 100%; "></body>
+  
+  <button id="showInfo">Github Users</button> <br>
+  <div id="showme"></div>
+  <script>
+      document.getElementById("showInfo").addEventListener('click', onProcess);
+
+      function onProcess()
+      {
+          var req = new XMLHttpRequest();
+          req.open('GET', 'https://api.github.com/users', true);
+          req.onload = function() 
+          {
+              if(req.status==200)
+              {
+                var people = JSON.parse(req.responseText)
+                var display= '';
+                for(var i in people)
+                  {
+                    display +=
+                    '<div id="individual">' +
+                    '<img src="'+people[i].avatar_url+'>'+
+                    '<div id="sub-individual"><ul>' +
+                    '<p><li>ID: <span id="class-one">'+people[i].id+'<span></li></p>' +
+                    '<p><li>Login: <span id="class-one">'+people[i].login+'<span></li></p>' +
+                    '<p><li>Repos: <a href="'+people[i].repos_url +'">'+people[i].repos_url +'</a></li></p>'+
+                    '</ul></div>' +
+                    '</div>';
+                    document.getElementById('showme').innerHTML = display;
+                  }
+              }
+          }
+        req.send();
+      }
+  </script>
+</body>
+</html>
